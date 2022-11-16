@@ -1,0 +1,64 @@
+{
+  "name": "@balena/pinejs-s3-storage",
+  "version": "0.0.1",
+  "description": "PineJS S3 storage adapter",
+  "main": "out",
+  "scripts": {
+    "lint": "balena-lint -e js -e ts src test && npx tsc --noEmit --project tsconfig.js.json",
+    "pretest": "npm run prepare",
+    "test": "mocha",
+    "posttest": "npm run lint",
+    "prepublish": "require-npm4-to-publish",
+    "prepare": "tsc",
+    "prettify": "balena-lint -e js -e ts --fix src test"
+  },
+  "repository": "https://github.com/balena-io-modules/pinejs-s3-storage.git",
+  "author": "",
+  "license": "BSD",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.208.0",
+    "@aws-sdk/url-parser": "^3.208.0",
+    "@balena/sbvr-types": "^3.4.9-web-resource-2-7a08bc0c1a93889e8142e8a9f058a2a2b1471581-1"
+  },
+  "devDependencies": {
+    "@balena/lint": "^6.2.0",
+    "@types/chai": "^4.3.0",
+    "@types/chai-as-promised": "^7.1.5",
+    "@types/chai-datetime": "^0.0.37",
+    "@types/lodash": "^4.14.181",
+    "@types/mocha": "^9.1.0",
+    "bluebird": "^3.7.2",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "chai-datetime": "^1.8.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^12.3.7",
+    "lodash": "^4.17.21",
+    "mocha": "^9.2.2",
+    "require-npm4-to-publish": "^1.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "balena-lint --fix"
+    ],
+    "*.js": [
+      "balena-lint --fix"
+    ]
+  },
+  "mocha": {
+    "reporter": "spec",
+    "recursive": true,
+    "require": "ts-node/register/transpile-only",
+    "_": "test/**/*.js"
+  },
+  "versionist": {
+    "publishedAt": "2022-10-14T16:25:29.118Z"
+  }
+}

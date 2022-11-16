@@ -1,0 +1,24 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es2018",
+		"strict": true,
+		"noImplicitAny": true,
+		"noUnusedParameters": true,
+		"noUnusedLocals": true,
+		"preserveConstEnums": true,
+		"removeComments": true,
+		"sourceMap": true,
+		"declaration": true,
+		"skipLibCheck": true,
+		"rootDir": "src",
+		"outDir": "out",
+		"allowJs": true
+	},
+	"include": [
+		"src/**/*",
+	],
+	"exclude": [
+		"node_modules"
+	]
+}
