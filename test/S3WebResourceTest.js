@@ -2,6 +2,9 @@ const { describe } = require('./helpers');
 import * as chai from 'chai';
 import * as chaiDateTime from 'chai-datetime';
 import * as chaiAsPromised from 'chai-as-promised';
+import { setupS3Mock } from './s3mocks';
+
+// FIXME: document this test. This is similar to WebResources but it knows it's using an S3 engine instead of the default Disk engine
 const {
 	S3_STORAGE_ADAPTER_NAME,
 } = require('../src/s3-storage-adapter/S3StorageAdapter');
@@ -10,14 +13,14 @@ chai.use(chaiDateTime);
 chai.use(chaiAsPromised);
 const { expect } = chai;
 
-process.env.S3_ENDPOINT = 'http://localhost:43680';
-process.env.S3_ACCESS_KEY = 'AKIAIOSFODNN7EXAMPLE';
-process.env.S3_SECRET_KEY = 'wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY';
-
-require('../src/index');
-
-const hex = '5261777221';
+const hex = '62616C656E6142414C454E41';
 const buf = Buffer.from(hex, 'hex');
+
+beforeEach(() => {
+	setupS3Mock(buf);
+	// Create the engine
+	require('../src/index');
+});
 
 const s3ObjectSource = {
 	filename: 'logo.png',

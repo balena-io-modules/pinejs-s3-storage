@@ -22,6 +22,9 @@ const generateUniqueKey = (filename: string) => {
 	return `${prefix}_${random}`;
 };
 
+/**
+ * FIXME upload objects using "Upload". See https://github.com/m-radzikowski/aws-sdk-client-mock#lib-storage-upload
+ */
 export class S3StorageAdapter implements StorageAdapter {
 	s3Client: S3Client;
 	config: S3ClientConfig;
@@ -92,17 +95,18 @@ export class S3StorageAdapter implements StorageAdapter {
 			const commandOutput = await this.s3Client.send(
 				new GetObjectCommand(commandInput),
 			);
-			console.log(commandOutput);
+			// For a description of the response format, which is a Stream with a mixin, see https://github.com/aws/aws-sdk-js-v3#streams
+			console.log('GetObjectCommand commandOutput: ', commandOutput);
+			if (!commandOutput.Body?.transformToByteArray) {
+				throw new Error(
+					'Invalid response to GetObjectCommand: response does not implement transformToByteArray',
+				);
+			}
 			const byteArray = await commandOutput.Body?.transformToByteArray();
 			if (!byteArray) {
 				throw new Error('Empty content');
 			}
 			const bufferMethod1 = Buffer.from(byteArray);
-			// const stream = commandOutput.Body as Readable;
-			// const bufferMethod2 = await streamToBuffer(stream);
-			// console.log(
-			// 	`method1 length: ${bufferMethod1.byteLength}, method2 length: ${bufferMethod2.byteLength}`,
-			// );
 			return bufferMethod1;
 		} catch (err) {
 			console.log('Error', err);
