@@ -7,7 +7,7 @@ import { setupS3Mock } from './s3mocks';
 // FIXME: document this test. This is similar to WebResources but it knows it's using an S3 engine instead of the default Disk engine
 const {
 	S3_STORAGE_ADAPTER_NAME,
-} = require('../src/s3-storage-adapter/S3StorageAdapter');
+} = require('../src/s3-storage-adapter/s3-storage-adapter');
 
 chai.use(chaiDateTime);
 chai.use(chaiAsPromised);
