@@ -1,0 +1,13 @@
+- commits:
+    - subject: Clean implementation supporting S2 Upload
+      hash: d67ae1cc4428fce768ce1a93a71125e869d59f96
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+  version: 0.1.0
+  title: ""
+  date: 2022-12-13T14:38:18.227Z
