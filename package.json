@@ -1,6 +1,6 @@
 {
   "name": "@balena/pinejs-s3-storage",
-  "version": "0.0.1",
+  "version": "0.0.17",
   "description": "PineJS S3 storage adapter",
   "main": "out",
   "scripts": {
@@ -17,8 +17,10 @@
   "license": "BSD",
   "dependencies": {
     "@aws-sdk/client-s3": "^3.208.0",
+    "@aws-sdk/lib-storage": "^3.218.0",
     "@aws-sdk/url-parser": "^3.208.0",
-    "@balena/sbvr-types": "^3.4.9-web-resource-2-7a08bc0c1a93889e8142e8a9f058a2a2b1471581-1"
+    "@balena/sbvr-types": "3.5.0-build-web-resource-2-1da0722ffb33e538ba2d4991a659c992240cc48d-1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
     "@balena/lint": "^6.2.0",
@@ -27,6 +29,7 @@
     "@types/chai-datetime": "^0.0.37",
     "@types/lodash": "^4.14.181",
     "@types/mocha": "^9.1.0",
+    "@types/uuid": "^8.3.4",
     "aws-sdk-client-mock": "^2.0.0",
     "bluebird": "^3.7.2",
     "chai": "^4.3.6",
