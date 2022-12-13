@@ -1,4 +1,18 @@
 - commits:
+    - subject: Trigger build
+      hash: 3fb8c330270f5f1621eb57eea782f6f233729ccb
+      body: ""
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+      nested: []
+  version: 0.2.0
+  title: ""
+  date: 2022-12-13T16:47:31.222Z
+- commits:
     - subject: Clean implementation supporting S2 Upload
       hash: d67ae1cc4428fce768ce1a93a71125e869d59f96
       body: ""
