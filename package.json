@@ -1,6 +1,6 @@
 {
   "name": "@balena/pinejs-s3-storage",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "PineJS S3 storage adapter",
   "main": "out",
   "scripts": {
