@@ -1,6 +1,6 @@
 # pinejs-s3-storage
 
-`S3StorageAdapter` is an implementation of a [PineJS WebResource storage adapter](https://github.com/balena-io-modules/sbvr-types/blob/master/src/storage-adapters/storage-adapter.ts#L7) that saves objects to Amazon S3 or a compatible service like [minio](https://github.com/minio/minio)
+`S3StorageAdapter` is an implementation of a [PineJS WebResource storage adapter](https://github.com/balena-io-modules/sbvr-types/blob/master/src/storage-adapters/storage-adapter.ts#L7) that saves objects to Amazon S3 or a compatible service like [MinIO](https://github.com/minio/minio)
 
 The configuration is specified as environment variables
 
