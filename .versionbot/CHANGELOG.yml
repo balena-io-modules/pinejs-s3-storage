@@ -1,4 +1,18 @@
 - commits:
+    - subject: Use new registerAdapter interface
+      hash: 0c066f83596c358a8b407f393561951d5b3f29f4
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+      nested: []
+  version: 1.0.2
+  title: ""
+  date: 2022-12-19T20:35:42.490Z
+- commits:
     - subject: Update MinIO name
       hash: 7e56211dec8502a600d40bf6b3569a7c59739f15
       body: ""
