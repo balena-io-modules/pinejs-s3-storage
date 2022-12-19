@@ -19,7 +19,7 @@
     "@aws-sdk/client-s3": "^3.208.0",
     "@aws-sdk/lib-storage": "^3.218.0",
     "@aws-sdk/url-parser": "^3.208.0",
-    "@balena/sbvr-types": "3.5.0-build-web-resource-2-1da0722ffb33e538ba2d4991a659c992240cc48d-1",
+    "@balena/sbvr-types": "3.5.0-build-web-resource-2-709862d81eaecb5e5468de34206c158cf78839b0-1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

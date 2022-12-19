@@ -1,9 +1,19 @@
-import { storageRegistry } from '@balena/sbvr-types/out/storage-adapters';
+import {
+	getStorageAdapter,
+	registerStorageAdapter,
+} from '@balena/sbvr-types/out/storage-adapters';
 import {
 	s3StorageAdapter,
 	S3_STORAGE_ADAPTER_NAME,
 } from '../src/s3-storage-adapter/s3-storage-adapter';
 import { setupS3Mock } from './s3mocks';
+import * as chai from 'chai';
+import * as chaiDateTime from 'chai-datetime';
+import * as chaiAsPromised from 'chai-as-promised';
+
+chai.use(chaiDateTime);
+chai.use(chaiAsPromised);
+const { expect } = chai;
 
 // FIXME: document this test. This is a basic S3 client test
 
@@ -14,25 +24,26 @@ const filename = 'logo.png';
 beforeEach(() => {
 	setupS3Mock(buf);
 	// Create the engine
-	console.log('Registering S3StorageAdapter');
 	const adapter = s3StorageAdapter();
-	storageRegistry[adapter.name] = adapter;
-	console.log('S3StorageAdapter registered, adapters are: ', storageRegistry);
+	registerStorageAdapter(adapter.name, adapter);
 });
 
 describe('S3StorageAdapter', () => {
 	it('should put an object', async () => {
-		const adapter = storageRegistry[S3_STORAGE_ADAPTER_NAME];
+		const adapter = getStorageAdapter(S3_STORAGE_ADAPTER_NAME);
 		const webresource = await adapter.saveFile(filename, buf);
-		console.log(webresource);
+		expect(webresource.filename).to.equal(filename);
+		expect(webresource.storage).to.equal(S3_STORAGE_ADAPTER_NAME);
+		const s3UrlRE =
+			/^https?:\/\/(?<bucket>.*)\.s3\.(?<region>.*)\.amazonaws\.com\/(?<key>.*)$/;
+		expect(webresource.href).to.match(s3UrlRE);
 	});
 
 	it('should put + get an object', async () => {
-		const adapter = storageRegistry[S3_STORAGE_ADAPTER_NAME];
+		const adapter = getStorageAdapter(S3_STORAGE_ADAPTER_NAME);
 		const webresource = await adapter.saveFile(filename, buf);
-		console.log(webresource);
 
 		const data = await adapter.getFileData(webresource);
-		console.log(data);
+		expect(data.length).to.equal(hex.length / 2);
 	});
 });
