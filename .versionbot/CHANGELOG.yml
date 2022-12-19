@@ -1,4 +1,18 @@
 - commits:
+    - subject: Clean up publishing files
+      hash: 81b8654122ab5cf568952f1de31f45a141fa5ae9
+      body: ""
+      footer:
+        Change-type: major
+        change-type: major
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+      nested: []
+  version: 1.0.0
+  title: ""
+  date: 2022-12-19T12:02:55.390Z
+- commits:
     - subject: Trigger build
       hash: 3fb8c330270f5f1621eb57eea782f6f233729ccb
       body: ""
