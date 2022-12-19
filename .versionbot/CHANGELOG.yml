@@ -1,4 +1,18 @@
 - commits:
+    - subject: Update MinIO name
+      hash: 7e56211dec8502a600d40bf6b3569a7c59739f15
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+      nested: []
+  version: 1.0.1
+  title: ""
+  date: 2022-12-19T12:21:22.006Z
+- commits:
     - subject: Clean up publishing files
       hash: 81b8654122ab5cf568952f1de31f45a141fa5ae9
       body: ""
