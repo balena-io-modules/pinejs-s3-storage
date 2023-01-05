@@ -1,7 +1,7 @@
 {
   "name": "@balena/pinejs-s3-storage",
   "version": "1.0.4",
-  "description": "PineJS S3 storage adapter",
+  "description": "PineJS Minio/S3 storage adapter",
   "main": "out",
   "scripts": {
     "lint": "balena-lint -e js -e ts src test && npx tsc --noEmit --project tsconfig.js.json",
