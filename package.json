@@ -20,12 +20,12 @@
     "@aws-sdk/lib-storage": "3.200.0",
     "@aws-sdk/signature-v4-crt": "3.200.0",
     "@aws-sdk/url-parser": "3.200.0",
-    "@balena/sbvr-types": "3.5.0-build-web-resource-2-11e6e097b1abd53c416f38c28e119bc7fa332c04-1",
+    "@balena/sbvr-types": "3.5.0-build-web-resource-2-8eb1fd3d95c2411f2037f94e8a2bb5c46aafc707-1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "@balena/lint": "^6.2.0",
     "@aws-sdk/types": "3.200.0",
+    "@balena/lint": "^6.2.0",
     "@types/chai": "^4.3.0",
     "@types/chai-as-promised": "^7.1.5",
     "@types/chai-datetime": "^0.0.37",
