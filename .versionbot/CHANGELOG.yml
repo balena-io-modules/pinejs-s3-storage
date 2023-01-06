@@ -1,4 +1,18 @@
 - commits:
+    - subject: Integrate beta version of sbvr-types supporting WebResource
+      hash: 4c88a284e1b6879a73fb7f37eaa9b7e3881f25f7
+      body: ""
+      footer:
+        Change-type: patch
+        change-type: patch
+        Signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+        signed-off-by: Ramiro Gonzalez <ramiro.gonzalez@balena.io>
+      author: Ramiro González Maciel
+      nested: []
+  version: 1.0.5
+  title: ""
+  date: 2023-01-06T02:32:47.257Z
+- commits:
     - subject: Bump aws sdk and mock versions
       hash: b2a90f733ee1291907ef96a116489ceec3650cdd
       body: ""
