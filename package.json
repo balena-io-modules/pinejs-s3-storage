@@ -20,7 +20,7 @@
     "@aws-sdk/lib-storage": "3.200.0",
     "@aws-sdk/signature-v4-crt": "3.200.0",
     "@aws-sdk/url-parser": "3.200.0",
-    "@balena/sbvr-types": "3.5.0-build-web-resource-2-8eb1fd3d95c2411f2037f94e8a2bb5c46aafc707-1",
+    "@balena/sbvr-types": "3.5.0-build-web-resource-2-8cb4ed49b088839f87f4094a1d8e2b6b0a092bf1-1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

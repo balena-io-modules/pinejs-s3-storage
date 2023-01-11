@@ -3,11 +3,14 @@ import {
 	S3ClientConfig,
 	GetObjectCommand,
 	DeleteObjectCommand,
+	PutObjectCommandInput,
 } from '@aws-sdk/client-s3';
+
 import { v4 as uuidv4 } from 'uuid';
 import {
 	StorageAdapter,
 	FileRef,
+	ContentOptions,
 } from '@balena/sbvr-types/out/storage-adapters';
 import { Upload } from '@aws-sdk/lib-storage';
 
@@ -80,12 +83,20 @@ export const s3StorageAdapter = (): S3StorageAdapter => {
 		name: S3_STORAGE_ADAPTER_NAME,
 		s3Client,
 
-		saveFile: async (filename: string, data: Buffer): Promise<FileRef> => {
+		saveFile: async (
+			filename: string,
+			data: string | Buffer | Uint8Array | ReadableStream<any> | Blob,
+			contentOptions?: ContentOptions,
+		): Promise<FileRef> => {
 			const key = generateUniqueKey(filename);
-			const uploadParams = {
-				Bucket: bucket,
-				Key: key,
+
+			const uploadParams: PutObjectCommandInput = {
 				Body: data,
+				Bucket: bucket,
+				CacheControl: contentOptions?.cacheControl,
+				ContentDisposition: contentOptions?.contentDisposition,
+				ContentType: contentOptions?.contentType,
+				Key: key,
 			};
 
 			try {
